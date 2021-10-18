@@ -9,7 +9,7 @@ void setup() {
 
   textureMode(NORMAL);
   fill(255);
-  stroke(color(255));
+  stroke(0);
   frameRate(200);
 }
 
@@ -20,18 +20,21 @@ void draw() {
   rotateX(rotx);
   rotateY(roty);
   scale(90);
+ 
   
 
 
 
 beginShape(QUADS);
 
+
+
   // +Z "front" face
   vertex(-1, -1,  1, 0, 0);
   vertex( 1, -1,  1, 1, 0);
   vertex( 1,  1,  1, 1, 1);
   vertex(-1,  1,  1, 0, 1);
-
+  
   // -Z "back" face
   vertex( 1, -1, -1, 0, 0);
   vertex(-1, -1, -1, 1, 0);
@@ -69,10 +72,15 @@ beginShape(QUADS);
   vertex(100, -40, 0, 300, 120);
   vertex(0, 100, 0, 200, 400);
   endShape();
+  
+
+
 }
 
 void mouseDragged() {
   float rate = 0.01;
   rotx += (pmouseY-mouseY) * rate;
   roty += (mouseX-pmouseX) * rate;
+  
+
 }
